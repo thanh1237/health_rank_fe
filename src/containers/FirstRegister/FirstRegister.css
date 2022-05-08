@@ -1,0 +1,7 @@
+.stepper-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.stepper-container .stepper {
+    margin: 5px;
+}

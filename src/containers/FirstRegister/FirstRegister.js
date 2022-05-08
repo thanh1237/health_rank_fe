@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./FirstRegister.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -92,9 +93,9 @@ export default function FirstRegister() {
                     <Typography component="h1" variant="h4" align="center">
                         Get To Know You
                     </Typography>
-                    <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+                    <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }} className="stepper-container">
                         {steps.map((label) => (
-                            <Step key={label}>
+                            <Step key={label} className="stepper">
                                 <StepLabel>{label}</StepLabel>
                             </Step>
                         ))}
@@ -105,7 +106,10 @@ export default function FirstRegister() {
                                 <Typography variant="h5" gutterBottom>
                                     Thank you for your submission.
                                 </Typography>
-                                <Typography variant="subtitle1">Your information have been saved to our system. Please comeback tomorrow to keep tracking.</Typography>
+                                <Typography variant="subtitle1">
+                                    Your information have been saved to our system. Please comeback tomorrow to keep
+                                    tracking.
+                                </Typography>
                                 <Grid container justifyContent="flex-end">
                                     <Grid item>
                                         <Link href="/profile" variant="body2">

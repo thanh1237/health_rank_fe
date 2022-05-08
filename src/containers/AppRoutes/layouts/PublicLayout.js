@@ -24,7 +24,7 @@ const PublicLayout = (props) => {
     const weightStorage = useSelector((state) => state.weight.weightStorage);
     const loading = useSelector((state) => state.weight.loading);
     const currentUser = useSelector((state) => state.auth.user);
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const weightList = weightStorage?.weight;
     const toggleDrawer = () => {
         setOpen(!open);
@@ -50,8 +50,8 @@ const PublicLayout = (props) => {
                     backgroundColor: (theme) =>
                         theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[900],
                     flexGrow: 1,
-                    height: "110vh",
-                    overflow: "hidden",
+                    height: "100%",
+                    // overflow: "hidden",
                 }}
             >
                 <Routes>

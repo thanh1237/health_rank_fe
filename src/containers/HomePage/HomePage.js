@@ -65,7 +65,11 @@ const HomePage = (props) => {
                                 <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
                                     <MonitorWeightOutlinedIcon />
                                 </Avatar>
-                                <Typography component="h1" variant="h5" style={{ marginBottom: "10px" }}>
+                                <Typography
+                                    component="h1"
+                                    variant="h5"
+                                    style={{ marginBottom: "10px", textAlign: "center" }}
+                                >
                                     {todayWeight ? "You have submitted your today weight" : "Submit your today Weight"}
                                 </Typography>
                                 {todayWeight ? (

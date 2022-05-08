@@ -21,22 +21,22 @@ export default function TodayData(props) {
                     <Title>Today data</Title>
                     <List disablePadding>
                         <Grid container spacing={0}>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={6} sm={6}>
                                 <ListItem key="weight" sx={{ py: 1, px: 0 }}>
                                     <ListItemText primary="Weight" secondary={`${latestData?.weight}kg`} />
                                 </ListItem>
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={6} sm={6}>
                                 <ListItem key="height" sx={{ py: 1, px: 0 }}>
                                     <ListItemText primary="Height" secondary={`${latestData?.height}m`} />
                                 </ListItem>
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={6} sm={6}>
                                 <ListItem key="bmi" sx={{ py: 1, px: 0 }}>
                                     <ListItemText primary="BMI" secondary={`${latestData?.bmi}`} />
                                 </ListItem>
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={6} sm={6}>
                                 <ListItem key="fat" sx={{ py: 1, px: 0 }}>
                                     <ListItemText primary="Body Fat" secondary={`${latestData?.bodyFat}%`} />
                                 </ListItem>
