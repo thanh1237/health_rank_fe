@@ -1,0 +1,21 @@
+#tdee {
+    height: 100%;
+    position: relative;
+}
+
+#tdee .tdee-tool {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#tdee .tdee-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#tdee .tdee-container .tdee-value {
+    color: #89bf04;
+}

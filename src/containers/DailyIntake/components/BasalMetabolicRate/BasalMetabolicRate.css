@@ -1,0 +1,20 @@
+#bmr {
+    height: 100%;
+    position: relative;
+}
+#bmr .bmr-tool {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#bmr .bmr-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#bmr .bmr-container .bmr-value {
+    color: #89bf04;
+}

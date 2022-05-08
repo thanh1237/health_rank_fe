@@ -1,0 +1,21 @@
+#protein {
+    height: 100%;
+    position: relative;
+}
+
+#protein .protein-tool {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#protein .protein-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#protein .protein-container .protein-value {
+    color: #89bf04;
+}

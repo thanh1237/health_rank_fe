@@ -1,0 +1,21 @@
+#carb {
+    height: 100%;
+    position: relative;
+}
+
+#carb .carb-tool {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#carb .carb-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#carb .carb-container .carb-value {
+    color: #89bf04;
+}

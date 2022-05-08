@@ -1,0 +1,13 @@
+#food-modal {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#food-modal .food-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}

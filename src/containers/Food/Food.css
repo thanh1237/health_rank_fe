@@ -1,0 +1,21 @@
+#food {
+    height: 100%;
+}
+
+#food .food-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#food .food-paper {
+    width: 100%;
+    height: 100%;
+}
+#food .food-paper .food-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

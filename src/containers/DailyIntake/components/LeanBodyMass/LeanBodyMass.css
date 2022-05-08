@@ -1,0 +1,21 @@
+#lbm {
+    height: 100%;
+    position: relative;
+}
+
+#lbm .lbm-tool {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#lbm .lbm-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#lbm .lbm-container .lbm-value {
+    color: #89bf04;
+}
