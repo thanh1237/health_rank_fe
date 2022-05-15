@@ -20,7 +20,7 @@ const TotalDailyEnergyExpenditure = (props) => {
                 <CssBaseline />
                 <Container sx={{ mt: 4, mb: 4 }} className="tdee-container">
                     <Typography variant="h4">TDEE</Typography>
-                    <Typography variant="h6" gutterBottom>
+                    <Typography variant="h6" gutterBottom style={{ textAlign: "center" }}>
                         Total Daily Energy Expenditure (calories)
                     </Typography>
                     <Typography variant="h3" gutterBottom className="tdee-value">
