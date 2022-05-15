@@ -79,11 +79,7 @@ const HomePage = (props) => {
                                         ? "You have submitted your today weight"
                                         : "Submit your today Weight"}
                                 </Typography>
-                                {todayWeight || createdWeightStorage ? (
-                                    <Link href="/profile" variant="body2">
-                                        Click here to view your Profile
-                                    </Link>
-                                ) : (
+                                {todayWeight || createdWeightStorage ? null : (
                                     <ValidatorForm onSubmit={handleSubmit}>
                                         <Grid container>
                                             <Grid item xs={12}>
