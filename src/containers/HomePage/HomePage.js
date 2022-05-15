@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HomePage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { weightActions } from "redux/actions";
@@ -19,6 +19,7 @@ const HomePage = (props) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const userId = useSelector((state) => state.auth.user._id);
+    const createdWeightStorage = useSelector((state) => state.weight.createdWeightStorage);
     const [formData, setFormData] = React.useState({
         weight: "",
     });
@@ -35,11 +36,15 @@ const HomePage = (props) => {
         try {
             dispatch(weightActions.createWeightByUser(body));
             dispatch(weightActions.getWeightStorageByUser(userId));
-            navigate("/profile");
         } catch (error) {
             console.log(error);
         }
     };
+
+    React.useEffect(() => {
+        dispatch(weightActions.getWeightStorageByUser(userId));
+    }, [dispatch, navigate, weightStorage.length]);
+    console.log(createdWeightStorage);
 
     return (
         <Container>
@@ -47,7 +52,7 @@ const HomePage = (props) => {
                 <Box className="process-container">
                     <CircularProgress />
                 </Box>
-            ) : !loading && weightStorage.length < 2 ? (
+            ) : !loading && weightStorage.length < 1 && !createdWeightStorage ? (
                 <FirstRegister />
             ) : (
                 <div>
@@ -70,9 +75,11 @@ const HomePage = (props) => {
                                     variant="h5"
                                     style={{ marginBottom: "10px", textAlign: "center" }}
                                 >
-                                    {todayWeight ? "You have submitted your today weight" : "Submit your today Weight"}
+                                    {todayWeight || createdWeightStorage
+                                        ? "You have submitted your today weight"
+                                        : "Submit your today Weight"}
                                 </Typography>
-                                {todayWeight ? (
+                                {todayWeight || createdWeightStorage ? (
                                     <Link href="/profile" variant="body2">
                                         Click here to view your Profile
                                     </Link>
@@ -115,4 +122,4 @@ const HomePage = (props) => {
     );
 };
 
-export default HomePage;
+export default React.memo(HomePage);

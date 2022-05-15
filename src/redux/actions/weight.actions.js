@@ -1,6 +1,7 @@
 import * as types from "redux/constants/weight.constants";
 import api from "redux/api";
 import { toast } from "react-toastify";
+import { routeActions } from "redux/actions/route.actions";
 
 const getWeightStorageByUser = (id) => async (dispatch) => {
     dispatch({ type: types.GET_WEIGHTS_STORAGE_REQUEST, payload: null });
@@ -29,6 +30,7 @@ const createWeightByUser = (body) => async (dispatch) => {
     try {
         const res = await api.post(`/weights`, body);
         dispatch({ type: types.POST_WEIGHTS_SUCCESS, payload: res.data.data });
+        dispatch(routeActions.redirect("/"));
     } catch (error) {
         console.log(error);
         dispatch({ type: types.POST_WEIGHTS_FAILURE, payload: error });

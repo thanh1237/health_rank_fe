@@ -20,7 +20,8 @@ import InfoForm from "containers/FirstRegister/components/InfoForm";
 import WeeklyGoalForm from "containers/FirstRegister/components/WeeklyGoalForm";
 import { Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { weightActions } from "redux/actions";
+import { routeActions, weightActions } from "redux/actions";
+import { useNavigate } from "react-router-dom";
 
 function Copyright() {
     return (
@@ -41,6 +42,8 @@ const theme = createTheme();
 
 export default function FirstRegister() {
     const dispatch = useDispatch();
+    const redirectTo = useSelector((state) => state.route.redirectTo);
+    const navigate = useNavigate();
     const currentUser = useSelector((state) => state.auth.user);
     const [activeStep, setActiveStep] = React.useState(0);
     const [formData, setFormData] = React.useState({
@@ -51,6 +54,7 @@ export default function FirstRegister() {
         goalWeight: "",
         weekGoalChange: "",
     });
+
     const handleNext = () => {
         setActiveStep(activeStep + 1);
         if (activeStep === 4) {
@@ -59,6 +63,7 @@ export default function FirstRegister() {
             const age = currentUser.age;
             const body = { ...formData, userId, gender, age };
             dispatch(weightActions.createWeightStorageByUser(body));
+            dispatch(weightActions.getWeightStorageByUser(userId));
         }
     };
 
@@ -84,7 +89,19 @@ export default function FirstRegister() {
                 throw new Error("Unknown step");
         }
     }
-    console.log(formData);
+
+    React.useEffect(() => {
+        if (redirectTo) {
+            if (redirectTo === "__GO_BACK__") {
+                navigate.goBack();
+                dispatch(routeActions.removeRedirectTo());
+            } else {
+                navigate(redirectTo);
+                dispatch(routeActions.removeRedirectTo());
+            }
+        }
+    }, [dispatch, navigate, redirectTo]);
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />

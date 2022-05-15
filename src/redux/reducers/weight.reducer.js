@@ -4,7 +4,6 @@ const initialState = {
     totalPageNum: 1,
     loading: false,
     weightStorage: [],
-    createdWeightStorage: {},
     createdWeight: {},
 };
 
