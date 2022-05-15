@@ -36,6 +36,7 @@ const HomePage = (props) => {
         try {
             dispatch(weightActions.createWeightByUser(body));
             dispatch(weightActions.getWeightStorageByUser(userId));
+            navigate("/profile");
         } catch (error) {
             console.log(error);
         }
@@ -44,7 +45,6 @@ const HomePage = (props) => {
     React.useEffect(() => {
         dispatch(weightActions.getWeightStorageByUser(userId));
     }, [dispatch, navigate, weightStorage.length]);
-    console.log(createdWeightStorage);
 
     return (
         <Container>
