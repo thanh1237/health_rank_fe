@@ -113,11 +113,18 @@ export default function PublicNavbar(props) {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Photos
+                            Health Rank
                         </Typography>
                         {isAuthenticated ? (
                             <div>
-                                <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleMenu} color="inherit">
+                                <IconButton
+                                    size="large"
+                                    aria-label="account of current user"
+                                    aria-controls="menu-appbar"
+                                    aria-haspopup="true"
+                                    onClick={handleMenu}
+                                    color="inherit"
+                                >
                                     <AccountCircle />
                                 </IconButton>
                                 <Menu
